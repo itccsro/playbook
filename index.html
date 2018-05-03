@@ -1,0 +1,96 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Strategii pentru Servicii Digitale — CivicTech România</title>
+  <meta charset='UTF-8'/>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <meta property="og:image" content="{{site.baseurl}}/assets/images/fb.jpg" />
+  <link href='//fonts.googleapis.com/css?family=Merriweather:400,300,700|Roboto:400,700' rel='stylesheet' type='text/css'>
+  <link rel="icon" type="image/png" href="{{site.baseurl}}/assets/images/favicon.png" />
+  <link href='{{site.baseurl}}/assets/css/styles.css' rel='stylesheet' />
+</head>
+
+<body>
+
+<div id="navigation_bar">
+   <div class="outer_container">
+    <div class="inner_container">
+
+      <a href="#introduction"><h3>Strategii pentru Servicii Digitale</h3></a>
+      <ul class="nav">
+        {% for play in site.plays %}
+          <li class="play_square"><a href="#play{{ play.play_number }}" title="Vezi strategie {{ play.play_number }}: {{ play.title }}">{{ play.play_number }}</a></li>
+        {% endfor %}
+      </ul>
+      <div id="menu_icon">
+        <a href="#plays_index_anchor" title="Înapoi la meniu"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="introduction">
+  <div class="outer_container">
+    <div class="inner_container">
+      <a id="usds_logo" href="https://civictech.ro" title="Link către CivicTech România"><img src='{{site.baseurl}}/assets/images/civictech-logo.png' alt="Logo CivicTech România"></a>
+      {% capture introduction %}{% include introduction.md %}{% endcapture %}
+      {{ introduction | markdownify }}
+      <div class="button">
+        <a href="#plays_index_anchor" title="Vezi strategii">Vezi strategii</a>
+      </div>
+      <div class="button">
+        <a href="https://github.com/civictechro/guidelines#readme" title="Vizitează GitHub pentru a ajuta la îmbunătățirea conținutului">Contribuie și tu</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="plays_index">
+  <div class="outer_container">
+    <div class="inner_container">
+      <a class="anchor_offset" id="plays_index_anchor"></a>
+      <h2>Strategii pentru Servicii Digitale</h2>
+      <div class="columns">
+        <ol>
+        {% for play in site.plays %}
+          <li><a href="#play{{ play.play_number }}" title="Vezi strategie {{ play.play_number }}">{{ play.title }}</a></li>
+        {% endfor %}
+        </ol>
+      </div>
+      <div class="button">
+        <a href="#play1" title="Vezi strategii în detaliu">În detaliu</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="plays" class="outer_container">
+  {% for play in site.plays %}
+    <div class="inner_container">
+      <a class="anchor_offset" id="play{{ play.play_number }}"></a>
+      <h6>STRATEGIE {{ play.play_number }}</h6>
+      <h2 class="display">{{ play.title }}</h2>
+
+      {{ play.output }}
+    </div>
+  {% endfor %}
+</div>
+
+<script src='{{site.baseurl}}/assets/js/jquery-1.11.1.min.js'></script>
+<script src='{{site.baseurl}}/assets/js/scrollspy.js'></script>
+<script src='{{site.baseurl}}/assets/js/site.js'></script>
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114659863-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114659863-3');
+</script>
+
+</body>
+</html>

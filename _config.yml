@@ -1,0 +1,11 @@
+permalink: pretty
+highlighter: rouge
+url: https://opensource.civictech.ro
+
+collections:
+  - plays
+
+markdown: kramdown
+
+sass:
+    sass_dir: assets/_sass
