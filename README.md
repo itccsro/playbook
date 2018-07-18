@@ -3,7 +3,7 @@
 
 [![GitHub issues by-label](https://img.shields.io/github/issues-raw/civictechro/playbook/help%20wanted.svg)](https://github.com/civictechro/playbook/issues) [![GitHub issues by-label](https://img.shields.io/github/issues-raw/civictechro/playbook/good%20first%20task.svg)](https://github.com/civictechro/playbook/issues) 
 
-# Strategii pentru Servicii Digitale
+# Standarde pentru Servicii Digitale
 
 *https://civictechro.github.io/playbook/*
 
